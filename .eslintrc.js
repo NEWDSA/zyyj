@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    '@vue/standard'
+    // '@vue/standard'   //关闭eslint检查
   ],
   parserOptions: {
     parser: 'babel-eslint'
