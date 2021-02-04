@@ -1,18 +1,11 @@
 <template>
   <div id="app">
-    <Header/>
-    <Left/>
     <router-view/>
   </div>
 </template>
 <script>
-import Header from '@/components/Header' //头部导航
-import Left from '@/components/Left' //左侧导航栏
 export default {
-  components: {
-    Header,
-    Left
-  }
+  name:'App'
 }
 </script>
 <style lang="scss">

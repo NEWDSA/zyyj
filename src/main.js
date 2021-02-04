@@ -5,7 +5,14 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.config.productionTip = false
+import '@/utils/global' //全局
+import echarts from 'echarts'  //引入echarts
+import ChartUtils from './utils/ChartUtil'
+//控制路由表的js文件
+import '@/permission.js'
+Vue.prototype.$echarts=echarts;
+Vue.prototype.$ChartUtils=ChartUtils;
+Vue.config.productionTip = false;
 Vue.use(ElementUI)
 new Vue({
   router,

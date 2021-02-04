@@ -8,7 +8,8 @@
       <li>成交报告系统</li>
       <li>考勤系统</li>
       <li>A+</li>
-      <li>当前用户<span>登出</span></li>
+      <!-- <li>当前用户<span>登出</span></li> -->
+      <slot></slot>
     </ul>
   </div>
 </template>
@@ -22,7 +23,7 @@ export default {}
   width: 100%;
   height: 70px;
   box-sizing: border-box;
-  border: 1px solid red;
+  // border: 1px solid red;
   ul {
     list-style-type: none;
     li {
@@ -40,11 +41,11 @@ export default {}
     li:nth-child(2) {
       margin-left: 90px;
     }
-    li:last-child{
-        float: right;
-        border: 1px solid pink;
-        margin-right: 200px;
-    }
+    // li:last-child{
+    //     float: right;
+    //     border: 1px solid pink;
+    //     margin-right: 200px;
+    // }
   }
 }
 </style>

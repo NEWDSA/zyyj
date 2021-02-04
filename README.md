@@ -26,7 +26,28 @@ npm run lint
 .getters 加工state成员给外界
 .actions 异步操作
 .modules 模块化状态管理
-扩展运算符
+
+const router = new VueRouter({ ... })
+
+router.beforeEach((to, from, next) => {
+  // ...
+})
+to 即将要进入的目标路由对象、from 当前导航正要离开的路由、next进行管道中的下一个钩子
+
+```
+### 路由名称
+```
+Transaction data             成交数据
+-- Performance Data Kanban   业绩数据看板
+Personnel data               人员数据
+-- Personnel Data Kanban     人员数据看板
+-- Staff KPI                 人员KPI
+system data                  系统数据
+--A+ data board              A+数据看板
+--Macau Finance Bureau       澳门财政局
+```
+### mockjs 数据使用
+```
 
 ```
 ### Customize configuration

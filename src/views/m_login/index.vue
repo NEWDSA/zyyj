@@ -13,9 +13,9 @@
           label-width="100px"
         >
           <div class="area_username">
-            <el-form-item label="用户名" prop="field101">
+            <el-form-item label="用户名" prop="username">
               <el-input
-                v-model="formData.field101"
+                v-model="formData.username"
                 placeholder="请输入用户名"
                 clearable
                 prefix-icon="el-icon-user-solid"
@@ -24,9 +24,9 @@
             </el-form-item>
           </div>
           <div class="area_password">
-            <el-form-item label="密码" prop="field102">
+            <el-form-item label="密码" prop="password">
               <el-input
-                v-model="formData.field102"
+                v-model="formData.password"
                 placeholder="请输入密码"
                 clearable
                 prefix-icon="el-icon-lock"
@@ -51,25 +51,24 @@
   </div>
 </template>
 <script>
-import {mapMutations} from 'vuex'
 export default {
   components: {},
   props: [],
   data () {
     return {
       formData: {
-        field101: undefined,
-        field102: undefined
+        username: 'admin',
+        password: '1'
       },
       rules: {
-        field101: [
+        username: [
           {
             required: true,
             message: '请输入用户名',
             trigger: 'blur'
           }
         ],
-        field102: [
+        password: [
           {
             required: true,
             message: '请输入密码',
@@ -84,15 +83,13 @@ export default {
   created () {},
   mounted () {},
   methods: {
-    ...mapMutations(['storeLogin']),
     submitForm () {
       this.$refs.elForm.validate((valid) => {
         if (!valid) return false
-        
+        let getUserRole=this.formData.username=='admin'?'admin':'user'
+        localStorage.setItem('userRole', getUserRole)
+        this.$router.push({path:'/main'})
       })
-    },
-    resetForm () {
-      this.$refs.elForm.resetFields()
     }
   }
 }
